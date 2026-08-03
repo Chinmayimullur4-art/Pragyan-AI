@@ -1,2 +1,11 @@
 streamlit
-numpy
+langchain 
+langchain_core 
+langchain-community 
+langchain-groq gradio python-dotenv
+openpyxl 
+langchain-huggingface 
+faiss-cpu 
+pypdf 
+sentence-transformers
+
