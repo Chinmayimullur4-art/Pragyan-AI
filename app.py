@@ -37,8 +37,7 @@ df = pd.DataFrame(faq_data)
 df.to_excel("pragyan_faq_prices.xlsx", index=False)
 print("✅ Created 'pragyan_faq_prices.xlsx' with PragyanAI presentation data!")
 
-from google.colab import drive
-drive.mount('/content/drive')
+
 
 import os
 import pandas as pd
