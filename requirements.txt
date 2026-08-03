@@ -2,7 +2,8 @@ streamlit
 langchain 
 langchain_core 
 langchain-community 
-langchain-groq gradio python-dotenv
+langchain-groq 
+python-dotenv
 openpyxl 
 langchain-huggingface 
 faiss-cpu 
