@@ -65,20 +65,30 @@ def load_documents(files=None):
 
     if files:
         for file in files:
+
+            # ---------------- PDF ----------------
             if file.name.endswith(".pdf"):
-                loader = PyPDFLoader(file.name)
+                import tempfile
+
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+                    tmp.write(file.read())
+                    tmp_path = tmp.name
+
+                loader = PyPDFLoader(tmp_path)
                 docs.extend(loader.load())
 
+            # ---------------- EXCEL ----------------
             elif file.name.endswith((".xlsx", ".xls")):
                 df = pd.read_excel(file)
                 for _, row in df.iterrows():
                     docs.append(Document(page_content=str(row.to_dict())))
 
-    # Load default file
+    # Load default FAQ
     df = pd.read_excel("pragyan_faq_prices.xlsx")
     for _, row in df.iterrows():
         docs.append(Document(page_content=str(row.to_dict())))
 
+    vectorstore = FAISS.from_documents(docs, embeddings)
     vectorstore = FAISS.from_documents(docs, embeddings)
 
 
