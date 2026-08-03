@@ -16,8 +16,8 @@ from langchain_groq import ChatGroq
 # -----------------------------
 # 🔐 ENV CONFIG
 # -----------------------------
-setx GROQ_BEC_API_KEY "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"
 
+GROQ_API_KEY = "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"
 if not GROQ_API_KEY:
     st.error("❌ GROQ_API_KEY not set in environment variables")
     st.stop()
