@@ -7,9 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1sSQMkr5KkzqP8gLPuAfA8NPHEz_IOzuF
 """
 
-!pip install langchain langchain_core langchain-community langchain-groq gradio python-dotenv
-
-!pip install openpyxl langchain-huggingface faiss-cpu pypdf sentence-transformers -q
 
 import pandas as pd
 
